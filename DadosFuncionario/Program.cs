@@ -15,13 +15,17 @@ namespace DadosFuncionario
             Console.WriteLine("Digite o valor do aumento:");
             double aumento = double.Parse(Console.ReadLine());
 
-            double salarioLiquido = salarioBruto * 0.9;
-            double salarioLiquido2 = (salarioBruto + aumento) * 0.9;
+            Funcionario funcionario = new Funcionario(nome, salarioBruto);
 
-            Console.WriteLine($"{nome}, seu salário líquido é {salarioLiquido:c2}\n");
+            double salarioLiquido = funcionario.CalcularSalarioLiquido();
 
-            Console.WriteLine($"{nome}, seu salário após o aumento é {salarioLiquido2:c2}");
+            funcionario.AumentarSalario(aumento);
 
+            double salarioLiquidoAposAumento = funcionario.CalcularSalarioLiquido();
+
+            Console.WriteLine($"{funcionario.Nome}, seu salário líquido é {salarioLiquido:c2}\n");
+
+            Console.WriteLine($"{funcionario.Nome}, seu salário após o aumento é {salarioLiquidoAposAumento:c2}");
         }
     }
 }
