@@ -1,21 +1,27 @@
-﻿class Funcionario
+﻿using System;
+
+namespace DadosFuncionario
 {
-    public string Nome;
-    public double SalarioBruto;
 
-    public Funcionario(string nome, double salarioBruto)
+    class Funcionario
     {
-        Nome = nome;
-        SalarioBruto = salarioBruto;
-    }
+        public string Nome;
+        public double SalarioBruto;
 
-    public double CalcularSalarioLiquido()
-    {
-        return SalarioBruto * 0.9;
-    }
+        public Funcionario(string nome, double salarioBruto)
+        {
+            Nome = nome;
+            SalarioBruto = salarioBruto;
+        }
 
-    public void AumentarSalario(double aumento)
-    {
-        SalarioBruto += aumento;
+        public double CalcularSalarioLiquido()
+        {
+            return SalarioBruto * 0.9;
+        }
+
+        public void AumentarSalario(double aumento)
+        {
+            SalarioBruto += aumento;
+        }
     }
 }
